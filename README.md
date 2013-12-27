@@ -1,2 +1,4 @@
+
 Supported resolutions:
-->1366x768
+
+-1366x768
