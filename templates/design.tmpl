@@ -1,0 +1,112 @@
+		<html><!--build:5-->
+	<head>
+<title>D.C.C. main page</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+
+	<body>
+<div class='heading'>
+
+	<h2 style="position:absolute; left: 5%">[Database Control Center]</h2><br/><br/>
+			<div class='tline' style="margin-left:2%; margin-top:2%"> 
+		<form method="post" action="main.php?sort=s_key" name="mode0">
+		<input type="submit" value="Query type: Insert"></form>
+			</div>
+		<div class='tline' style="margin-left:2%; margin-top:0.5%"> 
+		<form method="post" action="main.php?sort=s_key">
+		<input type="submit" value="Query type: Modify" name="mode1"></form>
+			</div>
+		<div class='tline' style="margin-left:2%; margin-top:0.5%"> 
+		<form method="post" action="main.php?sort=s_key">
+		<input type="submit" value="Query type: Delete" name="mode2"></form>
+			</div>
+		<div class='tline' style="margin-left:15%; margin-top:-7.0%;">
+		<form method="post" action="main.php?sort=s_key">
+		<input type="submit" style="width:115px; height:115px;" value="Paint" name="mode6"></form>
+			</div>
+		<div class='tline' style="margin-left:22%; margin-top:-2%;">
+		<form method="post" action="main.php?sort=s_key">
+		<input type="submit" style="width:115px; height:115px;" value="APP2" name="mode7"></form>
+			</div>
+</div>
+
+<div class='query'>
+<br/>
+<stf style="position:relative; left: 5%">[MySQL panel]</stf><br/><br/>
+{% if _s_wind==0 %}
+	<stf>Fill forms below to insert a new student into table.</stf>
+		<form method="post" action="insert.php">
+		<br/>
+			<stf_tab>Student's first name:</stf_tab>
+				<div class='fbox'><input type="text" name="f1"><br/></div>
+			<stf_tab>Student's last name:</stf_tab>
+				<div class='fbox'><input type="text" name="f2"><br/></div>
+			<stf_tab>Student's course:</stf_tab>
+				<div class='fbox'><input type="integer" name="f3"><br/></div>
+			<stf_tab>Student's rating:</stf_tab>
+				<div class='fbox'><input type="integer" name="f4"><br/></div>
+		<br/>
+		<div class='fbox'><input type="submit" value="Proceed"/></div>
+		</form>
+{% endif %}
+
+{% if _s_wind==1 %}
+	<stf>Input identify fields of record you want to edit.</stf><br/><br/>
+		<form method="post" action="edit.php">
+			<stf_tab>Student's first name:</stf_tab>
+				<div class='fbox'><input type="text" name="f1"><br/></div>
+			<stf_tab>Student's last name:</stf_tab>
+				<div class='fbox'><input type="text" name="f2"><br/></div><br/><br/>
+			<stf_tab>New first name:</stf_tab>
+				<div class='fbox'><input type="text" name="f3"><br/></div>
+			<stf_tab>New last name:</stf_tab>
+				<div class='fbox'><input type="text" name="f4"><br/></div>
+		<br/>
+		<div class='fbox'><input type="submit" value="Proceed"/></div>
+		</form>
+{% endif %}
+
+{% if _s_wind==2 %}
+	<stf>Input identify fields of record you want to delete.</stf><br/><br/><br/>
+		<form method="post" action="delete.php">
+			<stf_tab>Student's first name:</stf_tab>
+				<div class='fbox'><input type="text" name="f1"><br/></div>
+			<stf_tab>Student's last name:</stf_tab>
+				<div class='fbox'><input type="text" name="f2"><br/></div>
+		<br/>
+		<div class='fbox'><input type="submit" value="Proceed"/></div>
+		</form>
+		<div class='tline' style="margin-left:5%;"> 
+		<form method="post" action="clear.php">
+		<input type="submit" value="Erase all records"></form>
+			</div>
+{% endif %}
+
+</div>
+
+<div class='database'>
+<br/><stf style="position:relative; left: 5%">[Students Table]</stf>
+	<br/><br/>
+	<div class='tbox'>
+		<table border="1">
+			<tr>
+				<td style="width: 50px;"><a href="http://localhost/main.php?sort=s_key">#ID</a></td>
+				<td style="width: 180px;"><a href="http://localhost/main.php?sort=name1">#First name</a></td>
+				<td style="width: 180px;"><a href="http://localhost/main.php?sort=name2">#Last name</a></td>
+				<td style="width: 120px;"><a href="http://localhost/main.php?sort=course">#Course</a></td>
+				<td style="width: 120px;"><a href="http://localhost/main.php?sort=rating">#Rating</a></td>
+			</tr>
+	{% for d in data %}
+			<tr>
+				<td><stf>{{ d.s_key|escape }}</stf></td>
+				<td><stf>{{ d.name1|escape }}</stf></td>
+				<td><stf>{{ d.name2|escape }}</stf></td>
+				<td><stf>{{ d.course|escape }}</stf></td>
+				<td><stf>{{ d.rating|escape }}</stf></td>
+			</tr>
+	{% endfor %}
+</table>
+	</div>
+</div>
+	</body>
+		</html>

@@ -1,0 +1,94 @@
+body{
+	  background-color: #234D7A;
+	  background-image: url("background.png");
+}
+input[type=button], input[type=submit]{
+   width:200px;
+   font-size: 15px;
+   font-variant: small-caps;
+   font-family: arial;
+   color: black;
+   background: #C8D2D2;
+   border: 2px solid #2D506E;
+   
+}
+input[type=text], input[type=integer]{
+   width:160px;
+   font-size: 15px;
+   font-variant: small-caps;
+   font-family: arial;
+   color: black;
+   background: #FFFFFF;
+   border: 2px solid #2D506E;
+}	
+h1,h2,h3,h4,a,stf,stf_tab{
+	font-variant: small-caps;
+	font-family: arial;
+	color: white;
+}
+stf{
+	margin-left: 6px;
+}
+stf_tab{
+	margin-left: 4%;
+}
+stf,stf_tab{
+	font-size: 20px;
+}
+	
+.heading{
+border-width: 2px;
+border-style: solid;
+border-color: #2D506E;
+
+	height: 25%;
+	width: 99.6%;
+	background: rgba(25,30,35,0.75);
+}
+.query{
+border-width: 2px;
+border-style: solid;
+border-color: #2D506E;
+
+	z-index: 1;
+	margin-top: 1%;
+	float: left;
+	height: 60%;
+	width: 37.6%;
+	background: rgba(25,30,35,0.75);
+}
+.database{	
+border-width: 2px;
+border-style: solid;
+border-color: #2D506E;
+
+	margin-top: 1%;
+	float: right;
+	height: 60%;
+	width: 60.6%;
+	background: rgba(25,30,35,0.75);
+}
+.fbox{
+	z-index: 2;
+	margin-left: 5%;
+	height: 6.6%;
+	width: 22.2%;
+}
+.tbox
+{
+border-width: 2px;
+border-style: solid;
+border-color: #2D506E;
+	
+	z-index: 2;
+	margin-left: 5%;
+	height: 76%;
+	width: 90%;
+	overflow-y: scroll;
+    overflow-x: hidden;
+}
+.tline{
+	z-index: 2;
+	height: 15%;
+	width: 25%;
+}
